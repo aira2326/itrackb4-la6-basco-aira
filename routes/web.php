@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MovieController;
+use App\Http\Controllers\BookController;
 
-Route::get('/movies', [MovieController::class, 'index'])
-    ->name('movies.index');
+Route::get('/books', [BookController::class, 'index'])
+    ->name('books.index');
 
-Route::get('/movies/featured', [MovieController::class, 'featured'])
-    ->name('movies.featured');
+Route::get('/books/featured', [BookController::class, 'featured'])
+    ->name('books.featured');
 
-Route::get('/movies/filter/{genre?}', [MovieController::class, 'filter'])
-    ->name('movies.filter');
+Route::get('/books/filter/{category?}', [BookController::class, 'filter'])
+    ->name('books.filter');
 
-Route::get('/movies/{id}', [MovieController::class, 'show'])
-    ->name('movies.show');
+Route::get('/books/{id}', [BookController::class, 'show'])
+    ->name('books.show');

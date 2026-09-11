@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+          rel="stylesheet">
+
 </head>
 
 <body>
 
-    @include('partials._nav')
-
     <div class="container mt-4">
 
-        <h1>My Movie Collection</h1>
+        <h1>My Library</h1>
 
-        <p>hi, Aira Basco!</p>
+        <p>Prepared by: Amor Tonio</p>
+
+        @include('partials._nav')
 
         @yield('content')
 
     </div>
 
 </body>
-
 </html>
-

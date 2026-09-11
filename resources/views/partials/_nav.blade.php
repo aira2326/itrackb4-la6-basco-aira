@@ -1,24 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-light border-bottom mb-4">
-    <div class="container">
+<nav class="nav nav-pills mb-4">
 
-        <a class="navbar-brand fw-bold"
-           href="{{ route('movies.index') }}">
-            My Movies
-        </a>
+    <a class="nav-link" href="{{ route('books.index') }}">
+        All Books
+    </a>
 
-        <div class="navbar-nav">
+    <a class="nav-link" href="{{ route('books.featured') }}">
+        Featured Books
+    </a>
 
-            <a class="nav-link"
-               href="{{ route('movies.index') }}">
-                Show Movies
-            </a>
+    <a class="nav-link" href="{{ route('books.filter') }}">
+        Filter Books
+    </a>
 
-            <a class="nav-link"
-               href="{{ route('movies.featured') }}">
-                Featured Movie
-            </a>
-
-        </div>
-
-    </div>
 </nav>
