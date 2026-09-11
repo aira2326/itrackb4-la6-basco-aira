@@ -14,6 +14,7 @@ class MovieController extends Controller
                 'genre' => 'Sci-Fi',
                 'year' => 2010,
             ],
+
             2 => [
                 'id' => 2,
                 'title' => 'The Dark Knight',
@@ -21,6 +22,7 @@ class MovieController extends Controller
                 'genre' => 'Action',
                 'year' => 2008,
             ],
+
             3 => [
                 'id' => 3,
                 'title' => 'Interstellar',
@@ -28,6 +30,7 @@ class MovieController extends Controller
                 'genre' => 'Sci-Fi',
                 'year' => 2014,
             ],
+
             4 => [
                 'id' => 4,
                 'title' => 'The Matrix',
@@ -35,6 +38,7 @@ class MovieController extends Controller
                 'genre' => 'Sci-Fi',
                 'year' => 1999,
             ],
+
             5 => [
                 'id' => 5,
                 'title' => 'The Godfather',
@@ -42,6 +46,7 @@ class MovieController extends Controller
                 'genre' => 'Crime',
                 'year' => 1972,
             ],
+
             6 => [
                 'id' => 6,
                 'title' => 'Avengers: Endgame',

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>@yield('title')</title>
 
-<title>@yield('title')</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 </head>
 
 <body>
 
+    @include('partials._nav')
 
-@include('partials._nav')
+    <div class="container mt-4">
 
-<div class="container mt-4">
+        <h1>My Movie Collection</h1>
 
-    <h1>My Movie Collection</h1>
-    <p>Created by Aira Basco</p>
+        <p>hi, Aira Basco!</p>
 
-    @yield('content')
+        @yield('content')
 
-</div>
-
+    </div>
 
 </body>
+
 </html>
+

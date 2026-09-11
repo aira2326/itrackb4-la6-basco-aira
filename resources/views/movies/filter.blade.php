@@ -1,41 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Movie Filter</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <h1>Movie Filter</h1>
+@section('title', 'Movie Filter')
 
-    <p><strong>Full Name:</strong> Aira Basco</p>
+@section('content')
 
-    <p>{{ $message }}</p>
+<div class="card mb-4">
+    <div class="card-body">
+        <h2>Movie Filter</h2>
+        <p>{{ $message }}</p>
+    </div>
+</div>
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Director</th>
-            <th>Genre</th>
-            <th>Year</th>
-        </tr>
+<table class="table table-striped table-bordered">
 
-        @foreach ($movies as $movie)
-            <tr>
-                <td>{{ $movie['id'] }}</td>
-                <td>{{ $movie['title'] }}</td>
-                <td>{{ $movie['director'] }}</td>
-                <td>{{ $movie['genre'] }}</td>
-                <td>{{ $movie['year'] }}</td>
-            </tr>
-        @endforeach
-    </table>
 
-    <br>
+<thead class="table-dark">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Director</th>
+        <th>Genre</th>
+        <th>Year</th>
+    </tr>
+</thead>
 
-    <a href="{{ route('movies.index') }}">
-        ← Back to Movies
-    </a>
+<tbody>
 
-</body>
-</html>
+    @forelse ($movies as $movie)
+
+    <tr>
+        <td>{{ $loop->iteration }}</td>
+        <td>{{ $movie['title'] }}</td>
+        <td>{{ $movie['director'] }}</td>
+        <td>{{ $movie['genre'] }}</td>
+        <td>{{ $movie['year'] }}</td>
+    </tr>
+
+    @empty
+
+    <tr>
+        <td colspan="5" class="text-center">
+            No movies match your selected genre.
+        </td>
+    </tr>
+
+    @endforelse
+
+</tbody>
+
+
+</table>
+
+<a href="{{ route('movies.index') }}" class="btn btn-primary">
+    Back to Movies
+</a>
+
+@endsection
