@@ -1,16 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\ProductController;
 
-Route::get('/books', [BookController::class, 'index'])
-    ->name('books.index');
+// Product List
+Route::get('/products', [ProductController::class, 'index'])
+    ->name('products.index');
 
-Route::get('/books/featured', [BookController::class, 'featured'])
-    ->name('books.featured');
+// Product Details
+Route::get('/products/{id}', [ProductController::class, 'show'])
+    ->whereNumber('id')
+    ->name('products.show');
 
-Route::get('/books/filter/{category?}', [BookController::class, 'filter'])
-    ->name('books.filter');
+// Featured Product
+Route::get('/products-featured', [ProductController::class, 'featured'])
+    ->name('products.featured');
 
-Route::get('/books/{id}', [BookController::class, 'show'])
-    ->name('books.show');
+// Filter Products
+Route::get('/products-filter/{category?}', [ProductController::class, 'filter'])
+    ->name('products.filter');
