@@ -1,21 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MovieController;
 
-// Product List
-Route::get('/products', [ProductController::class, 'index'])
-    ->name('products.index');
+Route::get('/movies/featured', [MovieController::class, 'featured'])
+    ->name('movies.featured');
 
-// Product Details
-Route::get('/products/{id}', [ProductController::class, 'show'])
-    ->whereNumber('id')
-    ->name('products.show');
+Route::get('/movies/filter/{genre?}', [MovieController::class, 'filter'])
+    ->name('movies.filter');
 
-// Featured Product
-Route::get('/products-featured', [ProductController::class, 'featured'])
-    ->name('products.featured');
-
-// Filter Products
-Route::get('/products-filter/{category?}', [ProductController::class, 'filter'])
-    ->name('products.filter');
+Route::resource('movies', MovieController::class)
+    ->only(['index', 'show']);

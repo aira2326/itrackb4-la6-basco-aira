@@ -1,11 +1,19 @@
-<<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/products') }}">
-            Product System
+
+        <a class="navbar-brand" href="{{ route('movies.index') }}">
+            Movies
         </a>
 
         <div class="navbar-nav">
-            <a class="nav-link" href="{{ url('/products') }}">Products</a>
+            <a class="nav-link" href="{{ route('movies.index') }}">
+                All Movies
+            </a>
+
+            <a class="nav-link" href="{{ route('movies.featured') }}">
+                Featured Movie
+            </a>
         </div>
+
     </div>
 </nav>
